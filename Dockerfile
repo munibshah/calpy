@@ -8,4 +8,6 @@ CMD ["ls", "./app/"]
 
 RUN ls /app
 
+RUN pwd
+
 COPY ./app /app
