@@ -11,4 +11,4 @@ ENV PORT 1234
 RUN pip install --no-cache-dir -r requirements.txt
 
 # As an example here we're running the web service with one worker on uvicorn.
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8080"]
