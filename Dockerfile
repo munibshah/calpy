@@ -8,4 +8,4 @@ COPY ./app /app
 
 RUN cat /app/main.py 
 
-CMD ["fastapi", "run", "app/main.py", "--port", "8080"]
+CMD ["fastapi", "run", "/app/main.py", "--port", "8080"]
