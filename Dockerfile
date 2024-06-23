@@ -1,14 +1,11 @@
-FROM python:3.9-slim@sha256:980b778550c0d938574f1b556362b27601ea5c620130a572feb63ac1df03eda5 
+FROM python:3.9 
 
-ENV PYTHONUNBUFFERED True
+WORKDIR /code
 
-ENV APP_HOME /app
-WORKDIR $APP_HOME
-COPY . ./
+COPY ./requirements.txt /code/requirements.txt
 
-ENV PORT 1234
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
-RUN pip install --no-cache-dir -r requirements.txt
+COPY ./app /code/app
 
-# As an example here we're running the web service with one worker on uvicorn.
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
