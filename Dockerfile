@@ -6,6 +6,6 @@ RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 
 CMD ["ls", "./app/"]
 
-RUN ls 
+RUN ls /app
 
 COPY ./app /app
